@@ -4,7 +4,7 @@
 
 <div class="alert alert-success" role="alert">
   <h4 class="alert-heading">Site Stats</h4>
-  <p>There is a total of <%= @category_count == 1 ? "1 category " : "#{@category_count} categories " %>of products in the database.</p>
+  <p>There is a total of <strong><%= @category_count == 1 ? "1 category " : "#{@category_count} categories " %></strong>of products in the database.</p>
   <hr>
-  <p class="mb-0">Total number of products: <%=  @product_count %>.</p>
+  <p class="mb-0">Total number of products: <strong><%=  @product_count %></strong>.</p>
 </div>
