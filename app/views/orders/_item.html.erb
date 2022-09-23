@@ -8,12 +8,12 @@
     <p><%= product.description %></p>
   </td>
   <td>
-    $<%= test[:item_price_cents] / 100.00 %>
+    $<%= order[:item_price_cents] / 100.00 %>
   </td>
   <td>
-    <%= test[:quantity] %>
+    <%= order[:quantity] %>
   </td>
   <td>
-    $ <%= test[:total_price_cents] / 100.00 %>
+    $ <%= order[:total_price_cents] / 100.00 %>
   </td>
 </tr>

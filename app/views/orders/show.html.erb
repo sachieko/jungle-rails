@@ -20,8 +20,8 @@
           </tr>
         </thead>
         <tbody>
-          <% @order.line_items.each_with_index do |item, index| %>
-          <%= render 'item', test: item, product: @products[index] %>
+          <% @order.line_items.each_with_index do |order, index| %>
+          <%= render 'item', order: order, product: @products[index] %>
         <% end %>
         </tbody>
         <tfoot>
