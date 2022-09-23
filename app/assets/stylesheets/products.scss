@@ -28,6 +28,18 @@ main section.categories-show {
         padding: 0.375rem 0.75rem;
         font-size: 1rem;
         border-radius: 0.25rem;
+        cursor: default;
+        &:hover {
+          min-width: 110px;
+          background: rgba(224, 14, 14, 0.8);
+          border: 1px solid rgba(224, 14, 14, 0.8);
+          border-radius: 0.25em;
+          color: white;
+          padding: 0.375rem 0.75rem;
+          font-size: 1rem;
+          border-radius: 0.25rem;
+          cursor: default;
+        }
       }
 
       a {
