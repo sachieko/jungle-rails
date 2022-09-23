@@ -19,7 +19,7 @@ If Rails is complaining about authentication to the database, uncomment the user
 
 ## Stripe Testing
 
-Use Credit Card #4111 1111 1111 for testing success scenarios, yes this differs from what stripe is using but this has its own testing config.
+Use Credit Card #4111 1111 1111 1111 for testing success scenarios, yes this differs from what stripe is using but this has its own testing config.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
