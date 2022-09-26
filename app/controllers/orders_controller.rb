@@ -1,7 +1,9 @@
 class OrdersController < ApplicationController
+  before_action :authorize
 
   def show
     @order = Order.find(params[:id])
+    #if current_user.email == @order[:email]  -> If you want to begin so users can only see their own orders.
     product_ids = Array.new
     @order.line_items.each do |item|
       product_ids.push(item.product_id)
