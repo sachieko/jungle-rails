@@ -6,7 +6,7 @@
 
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
-    <%= "We are excited to help you grow your own jungle, #{@order.email}!" %>
+    <%= "We are excited to help you grow your own jungle, #{current_user && current_user.name} (#{@order.email})!" %>
   </div>
 
   <div class="panel panel-default items">
