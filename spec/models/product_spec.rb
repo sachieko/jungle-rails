@@ -31,8 +31,8 @@ RSpec.describe Product, type: :model do
         expect(@product.id).to be_present
       end
     end
-    context 'while missing a name field' do
-      it 'should not save when missing a required field' do
+    context 'while missing a required field' do
+      it 'should not save when missing a name' do
         @product.name = nil
         expect(@product[:name]).to eq(nil)
         
@@ -40,8 +40,6 @@ RSpec.describe Product, type: :model do
         expect(@product).to be_invalid
         expect(@product.errors[:name]).to include("can't be blank")
       end
-    end
-    context 'while missing a price field' do
       it 'should not save when missing a required field' do
         @product.price = nil
         @product.price_cents = nil
@@ -51,8 +49,6 @@ RSpec.describe Product, type: :model do
         expect(@product).to be_invalid
         expect(@product.errors[:price]).to include("can't be blank")
       end
-    end
-    context 'while missing a quantity field' do
       it 'should not save when missing a required field' do
         @product.quantity = nil
         expect(@product[:quantity]).to eq(nil)
@@ -61,8 +57,6 @@ RSpec.describe Product, type: :model do
         expect(@product).to be_invalid
         expect(@product.errors[:quantity]).to include("can't be blank")
       end
-    end
-    context 'while missing a category field' do
       it 'should not save when missing a required field' do
         @product.category_id = nil
         expect(@product[:category_id]).to eq(nil)
