@@ -1,7 +1,4 @@
 require 'rails_helper'
-require 'database_cleaner/active_record'
-
-DatabaseCleaner.strategy = :truncation
 
 RSpec.describe Product, type: :model do
   describe 'Validations' do
@@ -12,10 +9,6 @@ RSpec.describe Product, type: :model do
       Category.create({:id => 1, :name => 'Trees'})
       @product = Product.new(product_sample)
     end
-
-    after(:each) do
-      DatabaseCleaner.clean
-    end
     
     context 'with all necessary items' do
       it 'should save correctly when all fields are present' do
@@ -25,6 +18,7 @@ RSpec.describe Product, type: :model do
         expect(@product[:category_id]).to eq(1)
         expect(@product[:quantity]).to eq(5)
         expect(@product[:price_cents]).to eq(1999)
+        @product.validate
         expect(@product).to be_valid
         @product.save!
 
