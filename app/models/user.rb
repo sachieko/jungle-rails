@@ -11,7 +11,6 @@ class User < ApplicationRecord
   def self.authenticate_with_credentials(email, password)
     emailQuery = email.downcase.strip
     @user = User.find_by_email(emailQuery)
-    p @user
     @user && @user.authenticate(password) ? @user : nil
   end
 
