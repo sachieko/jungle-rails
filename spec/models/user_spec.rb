@@ -33,6 +33,13 @@ RSpec.describe User, type: :model do
         expect(@user).to be_invalid # should still be invalid
         expect(@user.id).to be_nil # should not have an id
       end
+      it 'should not save if a user has a password less than the minimum length 8' do
+        @user.password = 'hello'
+        @user.password_confirmation = 'hello'
+        @user.validate
+        expect(@user).to be_invalid
+        expect(@user.errors[:password]).to include("is too short (minimum is 8 characters)")
+      end
       it 'should not save a user missing email' do
         @user.email = nil
         @user.validate
