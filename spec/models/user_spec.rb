@@ -4,8 +4,8 @@ RSpec.describe User, type: :model do
   describe 'Validations' do
     # validation tests/examples here
     before(:each) do
-      user_sample = {:name => 'Oda Nobunaga', :email => 'nobu@oda.com', :password => 'Topphemlig kommunikation', :password_confirmation => 'Topphemlig kommunikation'}
-      copycat_sample = {:name => 'Akechi Mitsuhide', :email => 'nobu@oda.com', :password => 'honnoji', :password_confirmation => 'honnoji'}
+      user_sample = {:first_name => 'Nobunaga', :last_name => 'Oda', :email => 'nobu@oda.com', :password => 'Topphemlig kommunikation', :password_confirmation => 'Topphemlig kommunikation'}
+      copycat_sample = {:first_name => 'Mitsuhide', :last_name => 'Akechi', :email => 'nobu@oda.com', :password => 'honnoji', :password_confirmation => 'honnoji'}
       @user = User.new(user_sample)
       @copycat = User.new(copycat_sample)
     end
