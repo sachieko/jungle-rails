@@ -44,11 +44,22 @@ RSpec.describe User, type: :model do
       it 'should not save a user with a duplicate email' do
         @user.save!
         expect(@user.id).to be_present
-
+        
         @copycat.validate
         expect(@copycat).to be_invalid
         expect(@copycat.errors[:email]).to include("has already been taken")
         expect(@copycat.id).to be_nil
+      end
+      it 'should not save a user without first or last names' do
+        @user.first_name = nil
+        @user.validate
+        expect(@user.errors[:first_name]).to include("can't be blank")
+        expect(@user).to be_invalid
+
+        @copycat.last_name = nil
+        @copycat.validate
+        expect(@copycat.errors[:last_name]).to include("can't be blank")
+        expect(@copycat).to be_invalid
       end
     end
   end
