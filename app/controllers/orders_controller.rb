@@ -1,9 +1,8 @@
 class OrdersController < ApplicationController
-  before_action :authorize
 
   def show
     @order = Order.find(params[:id])
-    #if current_user.email == @order[:email]  -> If you want to begin so users can only see their own orders.
+    #if current_user.email == @order[:email]  -> If you want to begin so users can only see their own orders. also use :authorize before action
     product_ids = Array.new
     @order.line_items.each do |item|
       product_ids.push(item.product_id)
@@ -14,7 +13,6 @@ class OrdersController < ApplicationController
   def create
     charge = perform_stripe_charge
     order  = create_order(charge)
-
     if order.valid?
       empty_cart!
       redirect_to order, notice: 'Your Order has been placed.'
