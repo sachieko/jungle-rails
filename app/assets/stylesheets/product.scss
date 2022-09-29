@@ -63,6 +63,14 @@
       text-align: right;
       font-weight: 700;
     }
+    .add-to-cart{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+        font-weight: 700;
+    }
     button {
       width: 140px;
       font-size: 1em;
