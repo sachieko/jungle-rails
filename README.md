@@ -17,8 +17,7 @@ The following features or improvements were implemented by [me](https://github.c
 7. The ability for admins to create and add products to categories was implemented
 8. The user authentication pages, process, and functionality with appropriate active record models.
 9. Rspec tests were implemented for products and users, and any bugs caught by them were fixed.
-
-I am implementing cypress tests currently.
+10. Cypress tests for home page, product details, and adding to cart (along with checking if the item is in the cart) were implemented.
 
 I have plans to also add the ability to send an email receipt to users who are registered, with details of their order listed for them along with their order id.
 
