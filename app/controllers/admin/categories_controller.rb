@@ -1,5 +1,4 @@
-class Admin::CategoriesController < ApplicationController
-  http_basic_authenticate_with :name => ENV['ADMIN_USERNAME'], :password => ENV['ADMIN_PASSKEY']
+class Admin::CategoriesController < Admin::BaseController
   def index
     @categories = Category.left_outer_joins(:products).select('categories.*, COUNT(products.id) as count').group('categories.id').order(id: :desc) 
   end
@@ -12,7 +11,7 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to [:admin, :products], notice: 'Category created!'
+      redirect_to [:admin, :categories], notice: 'Category created!'
     else
       render :new
     end
