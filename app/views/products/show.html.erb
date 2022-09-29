@@ -10,9 +10,11 @@
       <p><%= @product.description %></p>
       <div class="quantity">
         <span><%= @product.quantity %> in stock at </span>
-        <span>$<%= @product.price %></span>
       </div>
       <div class="price">
+        <span>$<%= @product.price %></span>
+      </div>
+      <div class="add-to-cart">
         <% if @product.sold_out? %>
           <button class='soldout'>Sold Out</button>
         <% end %>          
