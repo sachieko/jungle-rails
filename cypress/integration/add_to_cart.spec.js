@@ -8,7 +8,7 @@ context('Add item to cart', () => {
     it('Should update the amount of items in the cart from the home page', { scrollBehavior: "center" }, () => {
       cy.get('.products article > div > form > button').first().click();
       cy.get('.navbar')
-        .contains('My Cart (1)');
+        .should('contain', 'My Cart (1)');
     });
     it('Should update the number of items in the cart from the product page', () => {
       cy.get('.products article')
@@ -17,7 +17,7 @@ context('Add item to cart', () => {
         .should('contain', 'Shrubbery')
         .get('.add-to-cart > form').click();
       cy.get('.navbar')
-        .contains('My Cart (1)');
+        .should('contain', 'My Cart (1)');
     });
     it('Should display the correct cart items on the cart page when we go to the part', () => {
       cy.get('.products article')
